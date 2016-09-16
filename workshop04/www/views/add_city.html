@@ -1,0 +1,20 @@
+<ion-view title="Add City">
+
+    <ion-nav-buttons side="right">
+        <button class="button icon ion-android-cancel" ng-click="addCityCtrl.cancel()"></button>
+    </ion-nav-buttons>
+
+    <ion-content padding="true">
+        <div class="list">
+            <label for="cityName" class="item item-input item-stacked-label">
+                <span class="input-label"> City Name </span>
+                <input type="text" id="cityName" placeholder="Shangri-la" ng-model="addCityCtrl.city">
+            </label>
+        </div>
+
+        <button class="button button-positive button-large button-block" ng-click="addCityCtrl.save()">
+            Add
+        </button>
+    </ion-content>
+
+</ion-view>

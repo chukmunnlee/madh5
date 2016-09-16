@@ -1,0 +1,19 @@
+<ion-view title="Cities">
+
+    <ion-nav-buttons side="right">
+        <button class="button icon ion-android-add" ng-click="cityListCtrl.addCity()"></button>
+    </ion-nav-buttons>
+
+    <ion-content>
+        <ion-list ng-repeat="c in cityListCtrl.cities">
+            <ion-item ng-click="cityListCtrl.showWeather($index)">
+                <h2>{{ c }}</h2>
+                <ion-option-button ng-click="cityListCtrl.removeCity($index)">
+                    Remove
+                </ion-option-button>
+            </ion-item>
+        </ion-list>
+
+    </ion-content>
+
+</ion-view>
