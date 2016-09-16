@@ -1,0 +1,48 @@
+<ion-view title="{{ showWeatherCtrl.city }}">
+
+    <ion-nav-buttons side="right">
+        <button class="button icon ion-android-share-alt"></button>
+    </ion-nav-buttons>
+
+    <ion-content padding="true">
+
+        <div class="list">
+
+            <div class="item item-thumbnail-left" ng-repeat="w in showWeatherCtrl.weather.weather">
+                <img ng-src="http://openweathermap.org/img/w/{{w.icon}}.png" alt="">
+                <h2>{{ w.main }}</h2>
+                <p>{{ w.description }}</p>
+            </div>
+
+            <div class="item">
+                <div class="row">
+                    <div class="col"><h2>Temp</h2></div>
+                    <div class="col">{{ showWeatherCtrl.weather.main.temp}} C</div>
+                </div>
+
+                <div class="row">
+                    <div class="col"><h2>Temp (min)</h2></div>
+                    <div class="col">{{ showWeatherCtrl.weather.main.temp_min}} C</div>
+                </div>
+
+                <div class="row">
+                    <div class="col"><h2>Temp (max)</h2></div>
+                    <div class="col">{{ showWeatherCtrl.weather.main.temp_max}} C</div>
+                </div>
+
+                <div class="row">
+                    <div class="col"><h2>Sunrise</h2></div>
+                    <div class="col">{{ showWeatherCtrl.weather.sys.sunrise | date:'short'}}</div>
+                </div>
+
+                    <div class="row">
+                    <div class="col"><h2>Sunset</h2></div>
+                    <div class="col">{{ showWeatherCtrl.weather.sys.sunset | date:'short'}}</div>
+                </div>
+            </div>
+
+        </div>
+
+    </ion-content>
+
+</ion-view>
