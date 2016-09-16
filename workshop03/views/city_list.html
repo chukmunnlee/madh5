@@ -6,8 +6,8 @@
 
     <ion-content>
         <ion-list ng-repeat="c in cityListCtrl.cities">
-            <ion-item>
-                <h2 ng-click="cityListCtrl.showWeather($index)">{{ c }}</h2>
+            <ion-item ng-click="cityListCtrl.showWeather($index)">
+                <h2>{{ c }}</h2>
                 <ion-option-button ng-click="cityListCtrl.removeCity($index)">
                     Remove
                 </ion-option-button>

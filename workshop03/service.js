@@ -12,8 +12,7 @@
                 this.cities = ["Singapore"];
             else
                 this.cities = JSON.parse(cities);
-            console.info(">>> cities: %s", JSON.stringify(this.cities));
-            return (this.cities);
+            return (this.cities.sort());
         };
 
         this.addCity = function(city) {
@@ -22,6 +21,7 @@
             });
             if (!found) {
                 this.cities.unshift(city);
+                this.cities.sort();
                 localStorage.setItem(key, JSON.stringify(this.cities));
             }
         }

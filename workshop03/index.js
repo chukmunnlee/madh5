@@ -1,7 +1,17 @@
 (function() {
-    var WeatherApp = angular.module("WeatherApp", ["ionic", "WeatherModule"]);
 
-    var WeatherConfig = function($stateProvider, $urlRouterProvider) {
+    var GoogleMapKey = "__YOUR_GMAP_KEY__";
+    var OpenWeatherMapKey = "__YOUR_OPEN_WEATHER_MAP_KEY__";
+
+    var WeatherApp = angular.module("WeatherApp", ["ionic", "uiGmapgoogle-maps", "WeatherModule"]);
+
+    var WeatherConfig = function($stateProvider, $urlRouterProvider, uiGmapGoogleMapApiProvider, MAP_KEY) {
+
+        uiGmapGoogleMapApiProvider.configure({
+            key: MAP_KEY,
+            v: "3.",
+            libraries: "weather,geometry,visualization"
+        });
 
         $stateProvider.state("cityList", {
             url: "/cities",
@@ -21,19 +31,36 @@
         $urlRouterProvider.otherwise("/cities");
     };
 
-    var ShowWeatherCtrl = function($stateParams, $state, APP_KEY, WeatherSvc) {
+    var ShowWeatherCtrl = function($scope, $q, $stateParams, $state, uiGmapGoogleMapApi, WEATHER_KEY, WeatherSvc) {
         var showWeatherCtrl = this;
-        showWeatherCtrl.city = $stateParams.city;
-        showWeatherCtrl.weather = {};
+        var updateWeather = function(weather) {
+            showWeatherCtrl.weather = weather;
+            showWeatherCtrl.weather.sys.sunrise = new Date(weather.sys.sunrise * 1000);
+            showWeatherCtrl.weather.sys.sunset = new Date(weather.sys.sunset * 1000);
+            showWeatherCtrl.weather.coord.latitude = weather.coord.lat;
+            showWeatherCtrl.weather.coord.longitude = weather.coord.lon;
+        };
 
-        WeatherSvc.getWeather(showWeatherCtrl.city, APP_KEY)
-            .then(function(weather) {
-                showWeatherCtrl.weather = weather;
-                showWeatherCtrl.weather.sys.sunrise = new Date(weather.sys.sunrise * 1000);
-                showWeatherCtrl.weather.sys.sunset = new Date(weather.sys.sunset * 1000);
-            }, function(error) {
+        showWeatherCtrl.mapOptions = {
+            draggable: false
+        };
+        showWeatherCtrl.city = $stateParams.city;
+        showWeatherCtrl.weather = { coord: {latitude: 0, longitude: 0 }, sys: {country: "X"}};
+
+        showWeatherCtrl.updateWeather = function() {
+            WeatherSvc.getWeather(showWeatherCtrl.city, WEATHER_KEY)
+                .then(updateWeather)
+                .then(function() {
+                    $scope.$broadcast("scroll.refreshComplete");
+                });
+        }
+
+        WeatherSvc.getWeather(showWeatherCtrl.city, WEATHER_KEY)
+            .then(updateWeather)
+            .then(uiGmapGoogleMapApi)
+            .catch(function(error) {
                 console.error(">>> error: %s ", error);
-            });
+            })
     };
 
     var CityListCtrl = function($state, $ionicListDelegate, WeatherSvc) {
@@ -42,17 +69,17 @@
 
         cityListCtrl.showWeather = function($index) {
             $state.go("showWeather", {city: cityListCtrl.cities[$index]});
-        }
+        };
 
         cityListCtrl.removeCity = function($index) {
             cityListCtrl.cities.splice($index, 1);
             WeatherSvc.saveCities(cityListCtrl.cities);
             $ionicListDelegate.closeOptionButtons();
-        }
+        };
 
         cityListCtrl.addCity = function($index) {
             $state.go("addCity")
-        }
+        };
     };
 
     var AddCityCtrl = function($state, WeatherSvc) {
@@ -61,23 +88,26 @@
         addCityCtrl.save = function() {
             WeatherSvc.addCity(addCityCtrl.city);
             $state.go("cityList");
-        }
+        };
 
         addCityCtrl.cancel = function() {
             $state.go("cityList");
-        }
+        };
     };
 
     var  WeatherCtrl = function() {
         var weatherCtrl =  this;
     };
 
-    WeatherApp.constant("APP_KEY", "be93736b8adfdad5094ce0b9f35d0ea3");
-    WeatherApp.config(["$stateProvider", "$urlRouterProvider", WeatherConfig]);
+    WeatherApp.constant("MAP_KEY", GoogleMapKey);
+    WeatherApp.constant("WEATHER_KEY", OpenWeatherMapKey);
+
+    WeatherApp.config(["$stateProvider", "$urlRouterProvider", "uiGmapGoogleMapApiProvider", "MAP_KEY", WeatherConfig]);
 
     WeatherApp.controller("CityListCtrl", ["$state", "$ionicListDelegate", "WeatherSvc", CityListCtrl]);
     WeatherApp.controller("AddCityCtrl", ["$state", "WeatherSvc", AddCityCtrl])
-    WeatherApp.controller("ShowWeatherCtrl", ["$stateParams", "$state", "APP_KEY", "WeatherSvc", ShowWeatherCtrl])
+    WeatherApp.controller("ShowWeatherCtrl", ["$scope", "$q", "$stateParams", "$state",
+            "uiGmapGoogleMapApi", "WEATHER_KEY", "WeatherSvc", ShowWeatherCtrl])
     WeatherApp.controller("WeatherCtrl", [WeatherCtrl]);
 
 })();

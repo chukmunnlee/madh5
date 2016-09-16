@@ -6,6 +6,13 @@
 
     <ion-content padding="true">
 
+        <ion-refresher pulling-text="Updating weather..." on-refresh="showWeatherCtrl.updateWeather()">
+        </ion-refresher>
+
+        <ui-gmap-google-map center="showWeatherCtrl.weather.coord" zoom="15" options="showWeatherCtrl.mapOptions">
+            <ui-gmap-marker idKey="showWeatherCtrl.weather.sys.country" coords="showWeatherCtrl.weather.coord"/>
+        </ui-gmap-google-map>
+
         <div class="list">
 
             <div class="item item-thumbnail-left" ng-repeat="w in showWeatherCtrl.weather.weather">
