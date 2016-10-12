@@ -1,0 +1,111 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ATTR_COMMENT	com/acme/topnews/impl/Constants.java	/^	public static final String ATTR_COMMENT = PARAM_COMMENT;	$/;"	f	class:Constants
+ATTR_COUNT	com/acme/topnews/impl/Constants.java	/^	public static final String ATTR_COUNT = "count";	$/;"	f	class:Constants
+ATTR_DESCRIPTION	com/acme/topnews/impl/Constants.java	/^	public static final String ATTR_DESCRIPTION = "description";$/;"	f	class:Constants
+ATTR_LINK	com/acme/topnews/impl/Constants.java	/^	public static final String ATTR_LINK = "link";$/;"	f	class:Constants
+ATTR_NAME	com/acme/topnews/impl/Constants.java	/^	public static final String ATTR_NAME = PARAM_NAME;$/;"	f	class:Constants
+ATTR_PUBDATE	com/acme/topnews/impl/Constants.java	/^	public static final String ATTR_PUBDATE = "pubdate";$/;"	f	class:Constants
+ATTR_THUMBNAIL	com/acme/topnews/impl/Constants.java	/^	public static final String ATTR_THUMBNAIL = "thumbnail";$/;"	f	class:Constants
+ATTR_TITLE	com/acme/topnews/impl/Constants.java	/^	public static final String ATTR_TITLE = PARAM_TITLE;$/;"	f	class:Constants
+BBCFeedReader	com/acme/topnews/impl/BBCFeedReader.java	/^public class BBCFeedReader implements Runnable {$/;"	c
+CORSFilter	com/acme/topnews/impl/CORSFilter.java	/^public class CORSFilter implements Filter {$/;"	c
+CommentServlet	com/acme/topnews/impl/CommentServlet.java	/^public class CommentServlet extends HttpServlet {	$/;"	c
+Constants	com/acme/topnews/impl/Constants.java	/^public class Constants {$/;"	c
+FUTURE_FEEDREADER	com/acme/topnews/impl/Constants.java	/^	public static final String FUTURE_FEEDREADER = "feedReaderFuture";$/;"	f	class:Constants
+FUTURE_PUSHNEWS	com/acme/topnews/impl/Constants.java	/^	public static final String FUTURE_PUSHNEWS = "pushNewsFuture";$/;"	f	class:Constants
+NewsFeeds	com/acme/topnews/impl/NewsFeeds.java	/^public class NewsFeeds {$/;"	c
+PARAM_COMMENT	com/acme/topnews/impl/Constants.java	/^	public static final String PARAM_COMMENT = "comment";$/;"	f	class:Constants
+PARAM_NAME	com/acme/topnews/impl/Constants.java	/^	public static final String PARAM_NAME = "name";$/;"	f	class:Constants
+PARAM_TITLE	com/acme/topnews/impl/Constants.java	/^	public static final String PARAM_TITLE = "title";$/;"	f	class:Constants
+PERIOD_FEEDREADER	com/acme/topnews/impl/Constants.java	/^	public static final int PERIOD_FEEDREADER = 900; \/\/seconds$/;"	f	class:Constants
+PERIOD_PUSHNEWS	com/acme/topnews/impl/Constants.java	/^	public static final int PERIOD_PUSHNEWS = 15;$/;"	f	class:Constants
+POOL	com/acme/topnews/impl/Constants.java	/^	public static final String POOL = "concurrent\/myFeedPool";$/;"	f	class:Constants
+PushCommentTask	com/acme/topnews/impl/rest/PushCommentTask.java	/^public class PushCommentTask {$/;"	c
+PushNewsResource	com/acme/topnews/impl/rest/PushNewsResource.java	/^public class PushNewsResource {$/;"	c
+PushNewsSocket	com/acme/topnews/impl/rest/PushNewsSocket.java	/^public class PushNewsSocket {$/;"	c
+PushNewsTask	com/acme/topnews/impl/rest/PushNewsTask.java	/^public class PushNewsTask implements Runnable {$/;"	c
+PushTask	com/acme/topnews/impl/rest/PushCommentTask.java	/^        public PushTask(JsonObject comment) {$/;"	m	class:PushCommentTask.PushTask
+PushTask	com/acme/topnews/impl/rest/PushCommentTask.java	/^    private class PushTask implements Runnable {$/;"	c	class:PushCommentTask
+RESTApp	com/acme/topnews/impl/rest/RESTApp.java	/^public class RESTApp extends Application {		$/;"	c
+START_DELAY	com/acme/topnews/impl/Constants.java	/^	public static final int START_DELAY = 5; \/\/seconds$/;"	f	class:Constants
+SocketMap	com/acme/topnews/impl/rest/SocketMap.java	/^public class SocketMap {$/;"	c
+THUMBNAIL_WIDTH	com/acme/topnews/impl/Constants.java	/^	public static final int THUMBNAIL_WIDTH = 144;$/;"	f	class:Constants
+TOP_NEWS	com/acme/topnews/impl/Constants.java	/^	public static final String TOP_NEWS = "http:\/\/feeds.bbci.co.uk\/news\/rss.xml";$/;"	f	class:Constants
+TopNewsInitializer	com/acme/topnews/impl/TopNewsInitializer.java	/^public class TopNewsInitializer implements ServletContextListener {$/;"	c
+add	com/acme/topnews/impl/rest/SocketMap.java	/^	public void add(final Session session) {$/;"	m	class:SocketMap
+append	com/acme/topnews/impl/CommentServlet.java	/^	private String append(String s, String text) {$/;"	m	class:CommentServlet	file:
+broadcast	com/acme/topnews/impl/rest/SocketMap.java	/^	public void broadcast(final JsonObject json) {$/;"	m	class:SocketMap
+cleanUp	com/acme/topnews/impl/rest/PushNewsTask.java	/^    private void cleanUp() {$/;"	m	class:PushNewsTask	file:
+close	com/acme/topnews/impl/rest/PushNewsSocket.java	/^	public void close(Session session) {$/;"	m	class:PushNewsSocket
+closeAll	com/acme/topnews/impl/rest/SocketMap.java	/^	public void closeAll() {$/;"	m	class:SocketMap
+com.acme.topnews.impl	com/acme/topnews/impl/BBCFeedReader.java	/^package com.acme.topnews.impl;$/;"	p
+com.acme.topnews.impl	com/acme/topnews/impl/CORSFilter.java	/^package com.acme.topnews.impl;$/;"	p
+com.acme.topnews.impl	com/acme/topnews/impl/CommentServlet.java	/^package com.acme.topnews.impl;$/;"	p
+com.acme.topnews.impl	com/acme/topnews/impl/Constants.java	/^package com.acme.topnews.impl;$/;"	p
+com.acme.topnews.impl	com/acme/topnews/impl/NewsFeeds.java	/^package com.acme.topnews.impl;$/;"	p
+com.acme.topnews.impl	com/acme/topnews/impl/TopNewsInitializer.java	/^package com.acme.topnews.impl;$/;"	p
+com.acme.topnews.impl.rest	com/acme/topnews/impl/rest/PushCommentTask.java	/^package com.acme.topnews.impl.rest;$/;"	p
+com.acme.topnews.impl.rest	com/acme/topnews/impl/rest/PushNewsResource.java	/^package com.acme.topnews.impl.rest;$/;"	p
+com.acme.topnews.impl.rest	com/acme/topnews/impl/rest/PushNewsSocket.java	/^package com.acme.topnews.impl.rest;$/;"	p
+com.acme.topnews.impl.rest	com/acme/topnews/impl/rest/PushNewsTask.java	/^package com.acme.topnews.impl.rest;$/;"	p
+com.acme.topnews.impl.rest	com/acme/topnews/impl/rest/RESTApp.java	/^package com.acme.topnews.impl.rest;$/;"	p
+com.acme.topnews.impl.rest	com/acme/topnews/impl/rest/SocketMap.java	/^package com.acme.topnews.impl.rest;$/;"	p
+comment	com/acme/topnews/impl/rest/PushCommentTask.java	/^        private final JsonObject comment;$/;"	f	class:PushCommentTask.PushTask	file:
+commentTask	com/acme/topnews/impl/CommentServlet.java	/^	@Inject private PushCommentTask commentTask;$/;"	f	class:CommentServlet	file:
+contextDestroyed	com/acme/topnews/impl/TopNewsInitializer.java	/^	public void contextDestroyed(ServletContextEvent sce) {$/;"	m	class:TopNewsInitializer
+contextInitialized	com/acme/topnews/impl/TopNewsInitializer.java	/^	public void contextInitialized(ServletContextEvent sce) {		$/;"	m	class:TopNewsInitializer
+count	com/acme/topnews/impl/rest/PushNewsTask.java	/^    private int count = 0;$/;"	f	class:PushNewsTask	file:
+destroy	com/acme/topnews/impl/CORSFilter.java	/^	public void destroy() { }$/;"	m	class:CORSFilter
+doFilter	com/acme/topnews/impl/CORSFilter.java	/^	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {$/;"	m	class:CORSFilter
+doPost	com/acme/topnews/impl/CommentServlet.java	/^	protected void doPost(HttpServletRequest req, HttpServletResponse resp) $/;"	m	class:CommentServlet
+feedReader	com/acme/topnews/impl/TopNewsInitializer.java	/^	@Inject private BBCFeedReader feedReader;$/;"	f	class:TopNewsInitializer	file:
+get	com/acme/topnews/impl/NewsFeeds.java	/^    public JsonObject get() {$/;"	m	class:NewsFeeds
+get	com/acme/topnews/impl/NewsFeeds.java	/^    public JsonObject get(final int idx) {$/;"	m	class:NewsFeeds
+get	com/acme/topnews/impl/rest/PushNewsResource.java	/^	public Response get() {$/;"	m	class:PushNewsResource
+get	com/acme/topnews/impl/rest/PushNewsResource.java	/^	public Response get(@PathParam("id") int id) {$/;"	m	class:PushNewsResource
+getTimestamp	com/acme/topnews/impl/NewsFeeds.java	/^    public long getTimestamp() {$/;"	m	class:NewsFeeds
+idx	com/acme/topnews/impl/rest/PushNewsTask.java	/^    private int idx = 0;$/;"	f	class:PushNewsTask	file:
+init	com/acme/topnews/impl/CORSFilter.java	/^	public void init(FilterConfig filterConfig) throws ServletException { }$/;"	m	class:CORSFilter
+isNullorEmpty	com/acme/topnews/impl/Constants.java	/^	public static boolean isNullorEmpty(final String n) {$/;"	m	class:Constants
+lock	com/acme/topnews/impl/rest/PushNewsTask.java	/^    private final Lock lock = new ReentrantLock();$/;"	f	class:PushNewsTask	file:
+logger	com/acme/topnews/impl/BBCFeedReader.java	/^    private static final Logger logger = Logger.getLogger(BBCFeedReader.class.getName());$/;"	f	class:BBCFeedReader	file:
+logger	com/acme/topnews/impl/CommentServlet.java	/^	private static final Logger logger = Logger.getLogger(CommentServlet.class.getName());$/;"	f	class:CommentServlet	file:
+logger	com/acme/topnews/impl/NewsFeeds.java	/^    private static final Logger logger = Logger.getLogger(NewsFeeds.class.getName());$/;"	f	class:NewsFeeds	file:
+logger	com/acme/topnews/impl/TopNewsInitializer.java	/^	private static final Logger logger = Logger.getLogger(TopNewsInitializer.class.getName());$/;"	f	class:TopNewsInitializer	file:
+logger	com/acme/topnews/impl/rest/PushCommentTask.java	/^    private final Logger logger = Logger.getLogger(PushNewsTask.class.getName());$/;"	f	class:PushCommentTask	file:
+logger	com/acme/topnews/impl/rest/PushNewsSocket.java	/^	private static Logger logger = Logger.getLogger(PushNewsSocket.class.getName());$/;"	f	class:PushNewsSocket	file:
+logger	com/acme/topnews/impl/rest/PushNewsTask.java	/^    private final Logger logger = Logger.getLogger(PushNewsTask.class.getName());$/;"	f	class:PushNewsTask	file:
+logger	com/acme/topnews/impl/rest/SocketMap.java	/^	private static final Logger logger = Logger.getLogger(SocketMap.class.getName());$/;"	f	class:SocketMap	file:
+newsFeeds	com/acme/topnews/impl/BBCFeedReader.java	/^    @EJB private NewsFeeds newsFeeds;$/;"	f	class:BBCFeedReader	file:
+newsFeeds	com/acme/topnews/impl/NewsFeeds.java	/^    private List<JsonObject> newsFeeds = new LinkedList<>();$/;"	f	class:NewsFeeds	file:
+newsFeeds	com/acme/topnews/impl/rest/PushNewsResource.java	/^	@EJB private NewsFeeds newsFeeds;$/;"	f	class:PushNewsResource	file:
+newsFeeds	com/acme/topnews/impl/rest/PushNewsTask.java	/^    @EJB private NewsFeeds newsFeeds;$/;"	f	class:PushNewsTask	file:
+newsItemCount	com/acme/topnews/impl/rest/PushNewsResource.java	/^	public Response newsItemCount() {$/;"	m	class:PushNewsResource
+open	com/acme/topnews/impl/rest/PushNewsSocket.java	/^	public void open(Session session) {$/;"	m	class:PushNewsSocket
+process	com/acme/topnews/impl/CommentServlet.java	/^	private void process(HttpServletRequest req, HttpServletResponse resp)$/;"	m	class:CommentServlet	file:
+publish	com/acme/topnews/impl/rest/PushCommentTask.java	/^    public void publish(final JsonObject comment) {$/;"	m	class:PushCommentTask
+pushNewsTask	com/acme/topnews/impl/TopNewsInitializer.java	/^	@Inject private PushNewsTask pushNewsTask;$/;"	f	class:TopNewsInitializer	file:
+readLock	com/acme/topnews/impl/rest/SocketMap.java	/^	public void readLock(final Runnable r) throws Throwable {$/;"	m	class:SocketMap
+refresh	com/acme/topnews/impl/NewsFeeds.java	/^    public void refresh(final List<JsonObject> fresh) {$/;"	m	class:NewsFeeds
+remove	com/acme/topnews/impl/rest/SocketMap.java	/^	public void remove(final Session session) {$/;"	m	class:SocketMap
+run	com/acme/topnews/impl/BBCFeedReader.java	/^    public void run() {$/;"	m	class:BBCFeedReader
+run	com/acme/topnews/impl/rest/PushCommentTask.java	/^        public void run() {$/;"	m	class:PushCommentTask.PushTask
+run	com/acme/topnews/impl/rest/PushNewsTask.java	/^    public void run() {$/;"	m	class:PushNewsTask
+rwLock	com/acme/topnews/impl/rest/SocketMap.java	/^	private final ReadWriteLock rwLock = new ReentrantReadWriteLock();$/;"	f	class:SocketMap	file:
+service	com/acme/topnews/impl/TopNewsInitializer.java	/^	@Resource(mappedName = Constants.POOL) private ManagedScheduledExecutorService service;$/;"	f	class:TopNewsInitializer	file:
+service	com/acme/topnews/impl/rest/PushCommentTask.java	/^	private ManagedScheduledExecutorService service;$/;"	f	class:PushCommentTask	file:
+size	com/acme/topnews/impl/NewsFeeds.java	/^    public int size() {$/;"	m	class:NewsFeeds
+size	com/acme/topnews/impl/rest/SocketMap.java	/^	public Integer size() {$/;"	m	class:SocketMap
+socketMap	com/acme/topnews/impl/rest/PushCommentTask.java	/^	@Inject private SocketMap socketMap;$/;"	f	class:PushCommentTask	file:
+socketMap	com/acme/topnews/impl/rest/PushNewsSocket.java	/^	@Inject private SocketMap socketMap;$/;"	f	class:PushNewsSocket	file:
+socketMap	com/acme/topnews/impl/rest/PushNewsTask.java	/^	@Inject SocketMap socketMap;$/;"	f	class:PushNewsTask
+sockets	com/acme/topnews/impl/rest/SocketMap.java	/^	private final Map<String, Session> sockets = new HashMap<>();$/;"	f	class:SocketMap	file:
+task	com/acme/topnews/impl/rest/PushNewsResource.java	/^	@Inject private PushNewsTask task;$/;"	f	class:PushNewsResource	file:
+timestamp	com/acme/topnews/impl/NewsFeeds.java	/^    private long timestamp = -System.currentTimeMillis();$/;"	f	class:NewsFeeds	file:
+timestamp	com/acme/topnews/impl/rest/PushNewsTask.java	/^    private long timestamp = 0L;$/;"	f	class:PushNewsTask	file:
+writeLock	com/acme/topnews/impl/rest/SocketMap.java	/^	public void writeLock(final Runnable r) throws Throwable {$/;"	m	class:SocketMap

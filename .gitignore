@@ -3,5 +3,9 @@ bower_components/
 node_modules/
 platforms/
 
+build/
+dist/
+private/
+
 plugins/
 !plugins/fetch.json
