@@ -47,7 +47,6 @@
             }).catch(function(err) {
                 console.error(">>. error: %s", err);
             })
-
         }
 
         TopNewsSvc.subscribe(function(news) {
