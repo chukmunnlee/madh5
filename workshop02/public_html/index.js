@@ -1,7 +1,7 @@
 (function() {
 
-    //var server = "localhost:8080/topnews"
-    var server = "10.10.0.50:8080/topnews"
+    var server = "localhost:8080/topnews"
+    //var server = "10.10.0.50:8080/topnews"
 
     var TopNewsApp = angular.module("TopNewsApp", []);
 

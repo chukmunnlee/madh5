@@ -9,51 +9,55 @@ and open the template in the editor.
         <title>TopNews</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
         
+		<script src="bower_components/jquery/dist/jquery.js"></script>
+		<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
         <script src="bower_components/angular/angular.js"></script>
         <script src="bower_components/angular-animate/angular-animate.js"></script>		
 
-        <link rel="stylesheet" href="app/index.css"/>		
+		<link rel="stylesheet" href="app/index.css">
         <script src="app/index.js"></script>		
 
     </head>
     <body data-ng-controller="TopNewsController as ctrl">
-        <div class="container">
-            <div class="newsitem">
-                <div class="title">
-                    <h1>{{ ctrl.news.title}}</h1>
-                </div>
-                <div class="content"> 
-                    <div class="thumbnail" data-ng-if="ctrl.news.thumbnail">
-                        <img data-ng-src="{{ ctrl.news.thumbnail}}">
-                    </div>
-                    <span class="description">
-                        {{ ctrl.news.description}}
-                    </span>
+		<div class="container">
+			<h1>Top News</h1>
+			<div class="jumbotron">
+				<div class="row">
+					<div class="col-sm-5">
+						<img class="img-responsive" ng-src="{{ ctrl.news.thumbnail}}" 
+							ng-if="ctrl.news.thumbnail">
+					</div>
+					<div class="col-sm-7">
+						<h2>{{ ctrl.news.title}}</h2>
+						<p> {{ ctrl.news.description}} </p>
+						<p class="pubdate">
+							{{ ctrl.news.pubdate}}
+						</p>
+					</div>
+				</div>
+			</div>
 
-                    <span class="pubdate">
-                        {{ ctrl.news.pubdate}}
-                    </span>				
-                </div>	
-            </div>
-        </div>
-        <hr/>
-        <table>
-            <tr>
-                <td data-ng-repeat="comment in ctrl.comments">
-                    <div class="comment">
-                        <div class="comment-header">
-                            {{ comment.title }}
-                        </div>
-                        <div class="comment-body">
-                            {{ comment.comment }}
-                        </div>
-                        <div class="comment-footer">
-                            {{ comment.name }} 
-                        </div>
-                    </div>
-                </td>
-            </tr>
-        </table>
+			<div class="row" >
+				<div class="col-md-4" ng-repeat="comment in ctrl.comments">
+					<div class="panel panel-success">
+						<div class="panel-heading">
+							<h3 class="panel-title">
+								{{ comment.title }}
+							</h3>
+						</div>
+						<div class="panel-body">
+							{{ comment.comment }}
+						</div>
+						<div class="panel-footer comment-footer">
+							{{ comment.name }} 
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
     </body>
 </html>

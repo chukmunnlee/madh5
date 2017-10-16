@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html data-ng-app="TopNewsApp">
+    <head>
+        <title>TopNews</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <script src="bower_components/angular/angular.js"></script>
+        <script src="bower_components/angular-animate/angular-animate.js"></script>		
+
+        <link rel="stylesheet" href="app/index.css"/>		
+        <script src="app/index.js"></script>		
+
+    </head>
+    <body data-ng-controller="TopNewsController as ctrl">
+        <div class="container">
+            <div class="newsitem">
+                <div class="title">
+                    <h1>{{ ctrl.news.title}}</h1>
+                </div>
+                <div class="content"> 
+                    <div class="thumbnail" data-ng-if="ctrl.news.thumbnail">
+                        <img data-ng-src="{{ ctrl.news.thumbnail}}">
+                    </div>
+                    <span class="description">
+                        {{ ctrl.news.description}}
+                    </span>
+
+                    <span class="pubdate">
+                        {{ ctrl.news.pubdate}}
+                    </span>				
+                </div>	
+            </div>
+        </div>
+        <hr/>
+        <table>
+            <tr>
+                <td data-ng-repeat="comment in ctrl.comments">
+                    <div class="comment">
+                        <div class="comment-header">
+                            {{ comment.title }}
+                        </div>
+                        <div class="comment-body">
+                            {{ comment.comment }}
+                        </div>
+                        <div class="comment-footer">
+                            {{ comment.name }} 
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>

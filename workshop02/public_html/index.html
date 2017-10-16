@@ -4,43 +4,55 @@
 		<title>TODO supply a title</title>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
 		<script src="bower_components/angular/angular.js"></script>
+
+		<link rel="stylesheet" href="index.css">
 		<script src="index.js"></script>
 	</head>
-	<body ng-controller="TopNewsCtrl as topNewsCtrl">
-        <h1>Top News</h1>
+	<body ng-controller="TopNewsCtrl as topNewsCtrl" >
+		<div class="container">
+			<h1>Top News</h1>
+			<div class="jumbotron">
+				<div class="row">
+					<div class="col-sm-5">
+						<img class="img-responsive" ng-src="{{ topNewsCtrl.current.payload.thumbnail}}" 
+							ng-if="topNewsCtrl.current.payload.thumbnail">
+					</div>
+					<div class="col-sm-7">
+						<h2>{{ topNewsCtrl.current.payload.title}}</h2>
+						<p> {{ topNewsCtrl.current.payload.description}} </p>
+						<p class="pubdate">
+							{{ topNewsCtrl.current.payload.pubdate}}
+						</p>
+					</div>
+				</div>
+			</div>
 
-		<h3>News</h3>
-        <code>
-            {{ topNewsCtrl.current | json }}
-        </code>
+			<h3>Comment</h3>
 
-		<h3>Comment</h3>
-
-        <table>
-			<tr>
-				<td>Name</td>
-				<td>
-					<input type="text" size="50" placeholder="Your name" ng-model="topNewsCtrl.name">
-				</td>
-			</tr>
-
-			<tr>
-				<td>Comment</td>
-				<td>
-					<input type="text" size="50" placeholder="Your comment" ng-model="topNewsCtrl.comment">
-				</td>
-			</tr>
-            <tr>
-				<td></td>
-				<td>
-					<button type="button" ng-click="topNewsCtrl.postComment()">
-						Post comment
+			<form name="commentForm" novalidate ng-submit="topNewsCtrl.postComment()">
+				<div class="form-group">
+					<label for="nameField">Name</label>
+					<input type="text" size="50" placeholder="Your name" 
+						id="nameField" name="nameField" required
+						class="form-control" ng-model="topNewsCtrl.name">
+				</div>
+				<div class="form-group">
+					<label for="commentField">Comment</label>
+					<input type="text" size="50" placeholder="Your comment" 
+						id="commentField" name="commentField" required
+						class="form-control" ng-model="topNewsCtrl.comment">
+				</div>
+				<div class="form-group">
+					<button class="btn btn-warning btn-large" type="submit" ng-disabled="commentForm.$invalid">
+						Post Comment
 					</button>
-				</td>
-			</tr>
+				</div>
+			</form>
 
-		</table>
+		</div>
 
 	</body>
 </html>
